@@ -1,82 +1,93 @@
 <script>
-	import svelteLogo from "./assets/svelte.svg";
-	import viteLogo from "/vite.svg";
-	import Counter from "./lib/Counter.svelte";
-	import electronLogo from "./assets/electron.svg";
-	import tailwindLogo from "./assets/tailwind.svg";
-
-	const nodeVersion = api.node();
-	const chromeVersion = api.chrome();
-	const electronVersion = api.electron();
+	import MainContent from './components/MainContent.svelte';
 </script>
 
-<main class="min-h-screen bg-slate-900 text-white flex flex-col">
-	<!-- Top Part -->
-	<section class="flex justify-center items-center h-48">
-		<div class="flex items-center space-x-4 gap-4 md:gap-16 flex-wrap">
-			<a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-				<img
-					class="h-20  hover:drop-shadow-[0_0_2rem_#ac00ac] transition-all duration-300"
-					src={viteLogo}
-					alt="Vite logo"
-				/>
-			</a>
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline">Menu</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
+                        <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1 </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2 </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
+                    </li>
+                    <li>
+                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Bootstrap</span></a>
+                        <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 1</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 2</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 3</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 4</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
+                    </li>
+                </ul>
+                <hr>
+                <div class="dropdown pb-4">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                        <span class="d-none d-sm-inline mx-1">loser</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                        <li><a class="dropdown-item" href="#">New project...</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col py-3">
+			<MainContent />
+        </div>
+    </div>
+</div>
 
-			<a href="https://svelte.dev/" target="_blank" rel="noreferrer">
-				<img
-					class="h-20  hover:drop-shadow-[0_0_2rem_#ff3e00aa] transition-all duration-300"
-					src={svelteLogo}
-					alt="Svelte logo"
-				/>
-			</a>
 
-			<a href="https://www.electronjs.org/" target="_blank" rel="noreferrer">
-				<img
-					class="h-20  hover:drop-shadow-[0_0_2rem_#237d8f] transition-all duration-300"
-					src={electronLogo}
-					alt="Electron logo"
-				/>
-			</a>
-
-			<a href="https://tailwindcss.com/" target="_blank" rel="noreferrer">
-				<img
-					class="h-20  hover:drop-shadow-[0_0_2rem_#171bff] transition-all duration-300 rounded-full p-1 bg-gradient-to-tr from-indigo-900 to-cyan-700"
-					src={tailwindLogo}
-					alt="Tailwind logo"
-				/>
-			</a>
-		</div>
-	</section>
-
-	
-	<!-- Middle Part -->
-	<section class="flex flex-col items-center justify-center mt-6">
-		<h1 class="text-4xl font-bold">Vite + Svelte + Electron + Tailwind</h1>
-		<p class="mt-6">
-			Node version: {nodeVersion} | Chrome version: {chromeVersion} | Electron version:
-			{electronVersion}
-		</p>
-		<div>
-			<Counter />
-		</div>
-	</section>
-
-	<!-- Footer -->
-	<footer class="bg-gray-950 fixed bottom-0 left-0 w-full py-2">
-		<div class="flex justify-between items-center mx-6">
-			<p class="flex-auto text-xs font-light">
-				If you are feeling generous, please consider buying me a coffee 🧡
-			</p>
-
-			<a
-				target="_blank"
-				rel="noreferrer"
-				href="https://www.buymeacoffee.com/feernandobraga"
-				class="text-xs flex items-center py-1 px-4 bg-gray-800 hover:bg-indigo-700 text-white
-				transition ease-in duration-200 text-center shadow-md focus:outline-none rounded-md"
-			>
-				Buy me a coffee <span class="ml-3 text-2xl">☕️</span>
-			</a>
-		</div>
-	</footer>
-</main>
