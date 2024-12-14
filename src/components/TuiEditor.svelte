@@ -6,7 +6,7 @@
     export const defaultValueMap = {
         initialEditType: 'wysiwyg',
         initialValue: '',
-        height: '800px',
+        height: '700px',
         previewStyle: 'vertical'
     };
 

@@ -1,4 +1,6 @@
-@import "bootstrap/scss/bootstrap";
+@import "./css/sandstone/variables.scss";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./css/sandstone/bootswatch.scss";
 
 .toastui-editor-contents {
   font-family: 'Lucida Grande', sans-serif !important;
