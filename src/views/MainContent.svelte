@@ -1,6 +1,8 @@
 <script>
   	import { onMount } from 'svelte';
+
 	import TuiEditor from '../components/TuiEditor.svelte';
+    import { Label, Input, Button, Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
 
     const fileLocation = "D:/starpelly.com/content/blog/2024/07/motionmelody-plus-lua/index.md";
 
@@ -22,17 +24,21 @@
     });
 </script>
 
-<div class="d-flex flex-column flex-grow-1 gap-3">
+<div class="flex flex-col grow gap-0">
 
     <!--Top-->
     <div>
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
-                <span class="navbar-brand">Editing Post</span>
 
-                <div>
-                    <button type="submit" class="btn btn-primary">Save</button>
-                </div>
+                <Breadcrumb aria-label="Solid background breadcrumb example" solid>
+                    <BreadcrumbItem href="/" home>Posts</BreadcrumbItem>
+                    <BreadcrumbItem href="/">{fileTitle}</BreadcrumbItem>
+
+                    <Button color="alternative">Preview</Button>
+                    <Button>Save</Button>
+                </Breadcrumb>
+
             </div>
         </nav>
 
@@ -43,17 +49,16 @@
     </div>
 
     <!--Bottom-->
-    <div class="d-flex flex-grow-1 gap-3">
+    <div class="flex grow gap-3">
 
         <!--Left side editors-->
-        <div class="d-flex flex-grow-1 card border-secondary">
-            <div class="card-header">Editor</div>
-            <div class="card-body d-flex flex-column gap-3">
+        <div class="flex grow">
+            <div class="card-body flex flex-col grow gap-3">
                 <form>
                     <fieldset>
                         <div>
-                            <label for="postTitle" class="col-sm-2 col-form-label">Title</label>
-                            <input id="postTitle" type="text" class="form-control" bind:value={fileTitle}>
+                            <Label for="post-title" class="block mb-2">Title</Label>
+                            <Input id="post-title" placeholder="Large input" bind:value={fileTitle} />
                         </div>
                         
                     </fieldset>
@@ -64,18 +69,29 @@
         </div>
 
         <!--Right side-->
-        <div class="d-flex flex-column card border-secondary">
-            <div class="card-header">Metadata</div>
-            <div class="card-body">
+        <div class="flex flex-col gap-2">
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                    Draft
-                    </label>
+            <div class="card border-secondary">
+                <div class="card-header">Metadata</div>
+                <div class="card-body">
+    
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                        Draft
+                        </label>
+                    </div>
                 </div>
             </div>
 
+            <div class="card border-secondary">
+                <div class="card-header">Tags</div>
+                <div class="card-body">
+
+                    Select yo tags!!!!!!!!!!!!!!!!!!!!!
+
+                </div>
+            </div>
 
         </div>
 
