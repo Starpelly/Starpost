@@ -1,6 +1,6 @@
 {
-  "name": "postflow",
-  "description": " A gohugo blog post manager I made for my website",
+  "name": "starpost",
+  "description": "A hugo blog post manager I made for my website",
   "private": true,
   "version": "0.1.0",
   "type": "module",

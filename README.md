@@ -1,4 +1,4 @@
-# PostFlow
+# Starpost
 A hugo blog post manager I made for my website.
 
 ## Why

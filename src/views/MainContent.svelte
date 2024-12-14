@@ -7,7 +7,7 @@
     let fileTitle;
     let fileDate;
     let fileContent;
-    let fileSlug = "/blog/" + fileLocation;
+    let fileSlug = "/blog/2024/07/motionmelody-plus-lua";
 
     const loadMarkdownFile = (filePath) => {
         const markdownContent = window.electron.readFile(filePath);
