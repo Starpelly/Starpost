@@ -6,7 +6,7 @@
     export const defaultValueMap = {
         initialEditType: 'wysiwyg',
         initialValue: '',
-        height: '700px',
+        // height: '700px',
         previewStyle: 'vertical'
     };
 
@@ -77,4 +77,4 @@
     }
 </script>
 
-<div bind:this={node} use:init={options}></div>
+<div bind:this={node} use:init={options} style="flex: auto;"></div>
